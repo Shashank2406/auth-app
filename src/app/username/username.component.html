@@ -1,0 +1,10 @@
+<app-head></app-head>
+<div class="well">
+  <form #form1="ngForm" (ngSubmit)="check(form1)">
+  <label>Username</label>
+  <input type="text" name="username" [(ngModel)]="user" #username="ngModel" placeholder="Enter your Username" >
+  <button type="submit" class="btn btn-primary">
+  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search
+  </button>
+  </form> 
+</div>
