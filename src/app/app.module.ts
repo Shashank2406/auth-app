@@ -39,6 +39,8 @@ const rou: Routes=[
     ProComponent,
     Pipee
   ],
+  entryComponents: [HeadComponent]
+  ,
   imports: [
     BrowserModule,
     FormsModule,

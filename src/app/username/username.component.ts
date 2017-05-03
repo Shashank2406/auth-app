@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 import { ConnectService } from '../connect.service';
+import { HeadComponent } from '../head/head.component';
 
 
 @Component({
@@ -10,11 +11,13 @@ import { ConnectService } from '../connect.service';
 export class UsernameComponent implements OnInit {
   user:string;
   a:Object={};
-  constructor(public send:ConnectService) {
+  constructor(public send:ConnectService,public dync:ComponentFactoryResolver,public view:ViewContainerRef) {
     this.user="";
+    
    }
 
   ngOnInit() {
+   this.addComponent();
   }
   check(form1)
   {
@@ -25,4 +28,10 @@ export class UsernameComponent implements OnInit {
        console.log(this.a);
      })
   }
+  addComponent() {
+       const factory = this.dync.resolveComponentFactory(HeadComponent);
+       const ref = this.view.createComponent(factory,0);
+       ref.changeDetectorRef.detectChanges();
+       console.log('da');
+   }
 }
