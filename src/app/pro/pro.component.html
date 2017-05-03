@@ -1,3 +1,11 @@
-<p>
-  pro works!
-</p>
+<app-head></app-head>
+<div class="well">
+  <form #form1="ngForm" (ngSubmit)="check(form1)">
+  <label>Poject Name</label>
+  <input type="text" name="username" [(ngModel)]="user" #username="ngModel" placeholder="Project Name" >
+  <button type="submit" class="btn btn-primary">
+  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search
+  </button>
+  </form> 
+</div>
+<!--<router-outlet></router-outlet>-->

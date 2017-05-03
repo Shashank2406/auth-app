@@ -16,7 +16,19 @@ import { ProComponent } from './pro/pro.component';
 
 const rou: Routes=[
 {path:'' ,component:LoginComponent},
-{path:'username' ,component:UsernameComponent,canActivate: [CanActivateViaAuthGuard]},
+{path:'username' ,component:UsernameComponent,canActivate: [CanActivateViaAuthGuard],
+//  children:[
+//    {
+//      path:'pro' ,component:ProComponent
+//    },
+//    {
+//    path:'username' ,component:UsernameComponent
+//    }
+//  ]
+},
+ {
+     path:'pro' ,component:ProComponent,canActivate: [CanActivateViaAuthGuard]
+   },
 ];
 @NgModule({
   declarations: [

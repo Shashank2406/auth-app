@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectService } from '../connect.service';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsernameComponent implements OnInit {
   user:string;
-  constructor() {
+  a:Object={};
+  constructor(public send:ConnectService) {
     this.user="";
    }
 
@@ -17,11 +19,10 @@ export class UsernameComponent implements OnInit {
   check(form1)
   {
     console.log(form1.value.username);
-    // this.send.setuser(form1.value.username);
-    // this.send.getdetails().subscribe(b => {
-    //   //this.a=JSON.stringify(b);
-    //   this.a=b;
-    //   console.log(this.a);
-    // })
+     this.send.setuser(form1.value.username);
+     this.send.getdetails().subscribe(b => {
+       this.a=b;
+       console.log(this.a);
+     })
   }
 }
