@@ -11,6 +11,7 @@ import { ConnectService } from './connect.service';
 import { ValidService } from './valid.service';
 import { LoginComponent } from './login/login.component';
 import { CanActivateViaAuthGuard } from './valid.service';
+import { Pipee } from './pipee.service';
 import { ProComponent } from './pro/pro.component';
 
 const rou: Routes=[
@@ -23,7 +24,8 @@ const rou: Routes=[
     HeadComponent,
     UsernameComponent,
     LoginComponent,
-    ProComponent
+    ProComponent,
+    Pipee
   ],
   imports: [
     BrowserModule,

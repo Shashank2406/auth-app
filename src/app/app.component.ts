@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pipee } from './pipee.service';
 
 @Component({
   selector: 'app-root',
