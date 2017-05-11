@@ -34,4 +34,8 @@ export class UsernameComponent implements OnInit {
        ref.changeDetectorRef.detectChanges();
        console.log('da');
    }
+  //Remove a component 
+//    remove(){
+//      this.viewContainerRef.remove(0);      
+//    }
 }
